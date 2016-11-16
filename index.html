@@ -1,20 +1,82 @@
 <html>
     <head>
-        <title>Your title here</title>
+        <title>Javascript Project</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
         <link rel="stylesheet" href="css/app.css">
+
+
     </head>
     <body>
 
+        <h1>List Users</h1>
+
+        <div class="row">
+            <div class="col s12 m7">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="http://materializecss.com/images/sample-1.jpg">
+                        <span class="card-title">Name</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-        <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
-        <script src="https://cdn.jsdelivr.net/vue/1.0.26/vue.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.9.3/vue-resource.js"></script>
-        <script src="https://cdn.jsdelivr.net/vue.router/0.7.13/vue-router.min.js"></script>
 
-        <script src="js/app.js"></script>
+        <!-- Modal Trigger -->
+        <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+            </div>
+
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+            </div>
+        </div>
+
+
+
+
+
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header">First</div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+
+            <li>
+                <div class="collapsible-header">Second</div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+
+            <li>
+                <div class="collapsible-header">Third</div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+        </ul>
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/services/User.js"></script>
+        <script type="text/javascript" src="js/controllers/Home.js"></script>
+
+
+        <script>APP.Controllers.Home.init()</script>
     </body>
 </html>
