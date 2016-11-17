@@ -2,8 +2,9 @@ APP.Services.User = (function() {
 
     var getAll = function() {
 
-        var promise = $.ajax({
+        return $.ajax({
         	url: "https://api.github.com/users"
+
         })
 
         console.log(promise);

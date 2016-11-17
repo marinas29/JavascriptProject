@@ -7,9 +7,14 @@ APP.Controllers.Home = (function(User) {
     var renderUserList = function() {
         User.getAll().then(function(result) {
         	for (user in result) {
-        		$('body').append(' \
-        			<div> \
-        				<h2>' + result[user].login + '</h2> \
+        		$('#list_users').append(' \
+                    <div class="col s6 l3">\
+                        <div class="card ">\
+                            <div class="card-image">\
+                                <img src="'+ result[user].avatar_url+'" />\
+                    			<span class="card-title title-card"> ' + result[user].login + '</span> \
+                            </div>\
+                        </div>\
         			</div>')
         		}
         })
