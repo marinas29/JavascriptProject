@@ -4,8 +4,8 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
         <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 
 
     </head>
@@ -13,12 +13,24 @@
         <div class="list">
 
             <h1 class="title-list">List Users</h1>
-            <div id="list_users" class="row">
+            <div id="list_users" class="row"> </div>
+
+            <div id="modal" class="modal-full" onclick="APP.Controllers.Home.removeClass()">
+
+                <div id="modal-details" class="modal-full__details">
+                    <div class="modal-full__details__content"> </div>
+
+                    <div id="list_repos" class="modal-full__repository repository">
+                        <h5 class="modal-full__repository__details--title"> Repositories </h5>
+
+                        <ul class="collapsible repository__content" data-collapsible="accordion"> </ul>
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
-
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
@@ -26,7 +38,8 @@
         <script type="text/javascript" src="js/services/User.js"></script>
         <script type="text/javascript" src="js/controllers/Home.js"></script>
 
-
-        <script>APP.Controllers.Home.init()</script>
+        <script>
+            APP.Controllers.Home.init()
+        </script>
     </body>
 </html>

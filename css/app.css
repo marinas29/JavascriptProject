@@ -1,26 +1,149 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
 body {
   background-color: #eee; }
 
 .list {
   background-color: #ddd;
   margin: 50px 250px;
-  padding: 50px;
-  padding-top: 15px; }
+  padding: 10px 50px; }
   .list .title-list {
     text-align: center; }
     @media screen and (max-width: 500px) {
       .list .title-list {
         font-size: 30px; } }
+  @media screen and (max-width: 1500px) {
+    .list {
+      margin: 50px 175px;
+      padding: 10px 50px; } }
+  @media screen and (max-width: 1200px) {
+    .list {
+      margin: 50px 100px;
+      padding: 10px 25px; } }
+  @media screen and (max-width: 992px) {
+    .list {
+      margin: 50px 25px;
+      padding: 10px; } }
+  @media screen and (max-width: 768px) {
+    .list {
+      margin: 40px 25px;
+      padding: 10px; } }
   @media screen and (max-width: 500px) {
     .list {
-      margin: 0px;
-      padding: 0px; } }
+      margin: 30px 15px;
+      padding: 5px; } }
 
 .title-card {
   text-shadow: 2px 10px 6px black;
-  font-weight: 400 !important; }
+  font-weight: 400;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  font-size: 24px; }
+  @media screen and (max-width: 768px) {
+    .title-card {
+      font-size: 20px; } }
   @media screen and (max-width: 500px) {
     .title-card {
-      font-size: 30px; } }
+      font-size: 15px; } }
+
+.modal-full {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none; }
+  .modal-full--active {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .modal-full__details {
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+    .modal-full__details__content {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      padding: 30px;
+      position: relative;
+      padding-bottom: 10px; }
+      .modal-full__details__content__avatar {
+        height: 30%;
+        border-radius: 50%; }
+        @media screen and (max-width: 1200px) {
+          .modal-full__details__content__avatar {
+            height: 25%; } }
+        @media screen and (max-width: 992px) {
+          .modal-full__details__content__avatar {
+            height: 20%; } }
+        @media screen and (max-width: 768px) {
+          .modal-full__details__content__avatar {
+            height: 15%; } }
+        @media screen and (max-width: 500px) {
+          .modal-full__details__content__avatar {
+            align-self: center;
+            height: 35%; } }
+      .modal-full__details__content__profile {
+        display: flex;
+        flex-direction: column;
+        padding: 0 15px; }
+        .modal-full__details__content__profile--title {
+          margin: 0;
+          padding-bottom: 20px; }
+          @media screen and (max-width: 500px) {
+            .modal-full__details__content__profile--title {
+              font-size: 20px;
+              padding: 0;
+              padding-bottom: 10px; } }
+        .modal-full__details__content__profile--text {
+          margin: 0;
+          font-size: 15px; }
+        @media screen and (max-width: 500px) {
+          .modal-full__details__content__profile {
+            text-align: center; } }
+      @media screen and (max-width: 500px) {
+        .modal-full__details__content {
+          display: flex;
+          flex-direction: column;
+          padding: 20px; } }
+    @media screen and (max-width: 1200px) {
+      .modal-full__details {
+        width: 60%;
+        height: 50%; } }
+    @media screen and (max-width: 992px) {
+      .modal-full__details {
+        width: 70%; } }
+    @media screen and (max-width: 768px) {
+      .modal-full__details {
+        width: 72%; } }
+    @media screen and (max-width: 500px) {
+      .modal-full__details {
+        width: 75%; } }
+  .modal-full__repository {
+    width: 100%;
+    height: 65%;
+    position: relative;
+    overflow: auto; }
+    .modal-full__repository__details--title {
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      padding-bottom: 15px; }
+    @media screen and (max-width: 500px) {
+      .modal-full__repository {
+        height: 40%; } }
+  .modal-full__close {
+    color: black;
+    font-size: 25px;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    font-weight: lighter; }
 
 /*# sourceMappingURL=app.css.map */
