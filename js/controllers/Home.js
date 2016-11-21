@@ -49,27 +49,43 @@ APP.Controllers.Home = (function(User) {
                 var listRepository = ''
 
                 for (repos in result) {
-                    listRepository += '<li>\
+
+                    listRepository += '<li id="'+ result[repos].name.replace(/[.]/g, "") +'" onclick="APP.Controllers.Home.renderRepositoryDetails('+ "'" + result[repos].name + "'" +')">\
                         <div class="collapsible-header"> ' + result[repos].name + '</div>\
-                        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>\
+                        <div class="collapsible-body"><p>Loading...</p></div>\
                     </li>\
                     '
                 }
 
                 $('.repository__content').html(listRepository)
             })
+
         });
     }
 
+    var renderRepositoryDetails = function(nameRepo) {
+        var content = $('#' + nameRepo.replace(/[.]/g, "") + ' .collapsible-body').html()
+        if (content === "<p>Loading...</p>")
+            APP.Services.User.getInfoRepos(nameRepo).then(function(result) {
+                var listDetailsRepository = ''
+
+                listDetailsRepository += '<ul class="details-rep" >\
+                    <li class="details-rep__list">Fullname: ' + result.full_name + '</li>\
+                    <li class="details-rep__list">Description: ' + result.description + '</li>\
+                    <li class="details-rep__list">Forks: ' + result.forks_count + '</li>\
+                    <li class="details-rep__list">Create: ' + result.created_at + '</li>\
+                    <li class="details-rep__list">Default Branch: ' + result.default_branch + '</li>\
+                    <li class="details-rep__list">Stargazers Count: ' + result.stargazers_count + '</li>\
+                    <li class="details-rep__list">Watchers Count:' + result.watchers_count + '</li>\
+                </ul>'
+
+                $('#' + nameRepo.replace(/[.]/g, "") + ' .collapsible-body').html(listDetailsRepository)
+            })
+    }
+
     var removeClass = function() {
-
-            $('body').removeClass('body--noscrolled')
-
-
-            $('#modal').removeClass('modal-full--active')
-        
-
-
+        $('body').removeClass('body--noscrolled')
+        $('#modal').removeClass('modal-full--active')
     }
 
     function setupEvents() {
@@ -81,6 +97,7 @@ APP.Controllers.Home = (function(User) {
     return {
         init: init,
         renderUserDetails: renderUserDetails,
+        renderRepositoryDetails : renderRepositoryDetails,
         removeClass: removeClass
     }
 

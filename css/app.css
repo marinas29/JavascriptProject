@@ -1,4 +1,16 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+ul, nav, ol {
+  list-style: none; }
+
+input, textarea, button {
+  border: 0;
+  outline: none; }
+
 body {
   background-color: #eee; }
 
@@ -92,7 +104,7 @@ body {
         @media screen and (max-width: 500px) {
           .modal-full__details__content__avatar {
             align-self: center;
-            height: 35%; } }
+            height: 25%; } }
       .modal-full__details__content__profile {
         display: flex;
         flex-direction: column;
@@ -128,20 +140,31 @@ body {
         width: 72%; } }
     @media screen and (max-width: 500px) {
       .modal-full__details {
-        width: 75%; } }
+        width: 75%;
+        height: 80%; } }
   .modal-full__repository {
     width: 100%;
-    height: 65%;
+    height: 60%;
     position: relative;
-    overflow: auto; }
+    overflow: auto;
+    padding: 0 10px; }
     .modal-full__repository__details--title {
       text-align: center;
       font-size: 15px;
       font-weight: bold;
       padding-bottom: 15px; }
+    @media screen and (max-width: 1200px) {
+      .modal-full__repository {
+        height: 65%; } }
+    @media screen and (max-width: 992px) {
+      .modal-full__repository {
+        height: 70%; } }
+    @media screen and (max-width: 768px) {
+      .modal-full__repository {
+        height: 60%; } }
     @media screen and (max-width: 500px) {
       .modal-full__repository {
-        height: 40%; } }
+        height: 35%; } }
   .modal-full__close {
     color: black;
     font-size: 25px;
@@ -149,5 +172,18 @@ body {
     top: 0%;
     right: 0%;
     font-weight: lighter; }
+
+.details-rep {
+  padding: 10px 0;
+  background-color: #eee; }
+  .details-rep__list {
+    font-size: 13px;
+    padding: 10px 0 0 50px; }
+    @media screen and (max-width: 768px) {
+      .details-rep__list {
+        padding: 10px 0 0 25px; } }
+    @media screen and (max-width: 500px) {
+      .details-rep__list {
+        padding: 10px 0 0 10px; } }
 
 /*# sourceMappingURL=app.css.map */

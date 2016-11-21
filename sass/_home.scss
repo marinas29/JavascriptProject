@@ -120,7 +120,7 @@ body {
 
                 @include media-q(xs) {
                     align-self: center;
-                    height: 35%;
+                    height: 25%;
                 }
             }
 
@@ -172,15 +172,17 @@ body {
 
         @include media-q(xs) {
             width: 75%;
+            height: 80%;
         }
     }
 
 
     &__repository {
         width: 100%;
-        height: 65%;
+        height: 60%;
         position: relative;
         overflow: auto;
+        padding: 0 10px;
 
         &__details {
             &--title {
@@ -191,8 +193,20 @@ body {
             }
         }
 
+        @include media-q(lg) {
+            height: 65%;
+        }
+
+        @include media-q(md) {
+            height: 70%;
+        }
+
+        @include media-q(sm) {
+            height: 60%;
+        }
+
         @include media-q(xs) {
-            height: 40%;
+            height: 35%;
         }
 
     }
@@ -205,5 +219,23 @@ body {
         right: 0%;
         font-weight: lighter;
 
+    }
+}
+
+.details-rep {
+    padding: 10px 0;
+    background-color: #eee;
+
+    &__list {
+        font-size: 13px;
+        padding: 10px 0 0 50px;
+
+        @include media-q(sm) {
+            padding: 10px 0 0 25px;
+        }
+
+        @include media-q(xs) {
+            padding: 10px 0 0 10px;
+        }
     }
 }

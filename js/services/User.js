@@ -28,10 +28,17 @@ APP.Services.User = (function() {
         })
     }
 
+    var getInfoRepos = function(nameRepo) {
+        return $.ajax({
+            url: "https://api.github.com/repos/" + user.login + '/' + nameRepo
+        })
+    }
+
     return {
         getAll: getAll,
         getUser: getUser,
-        getRepos: getRepos
+        getRepos: getRepos,
+        getInfoRepos: getInfoRepos
     }
 
 
