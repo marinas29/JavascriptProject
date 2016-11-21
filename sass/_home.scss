@@ -1,6 +1,9 @@
 body {
     background-color:#eee;
+}
 
+.body--noscrolled {
+    overflow: hidden;
 }
 
 .list {
@@ -46,6 +49,8 @@ body {
 }
 
 .title-card {
+    cursor: pointer;
+
     text-shadow: 2px 10px 6px black;
     font-weight: 400;
     color: #fff;
@@ -76,7 +81,6 @@ body {
     &--active {
         display: block;
         background-color: rgba(0, 0, 0, 0.5);
-
 
     }
 

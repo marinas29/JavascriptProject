@@ -31,6 +31,8 @@ APP.Controllers.Home = (function(User) {
         //    console.log(result);
             $('#modal').addClass('modal-full--active')
 
+            $('body').addClass('body--noscrolled')
+
             $('.modal-full__details__content').html(' \
                     <img src="'+ result.avatar_url +'" class="modal-full__details__content__avatar" /> \
                     <div class="modal-full__details__content__profile"> \
@@ -60,7 +62,14 @@ APP.Controllers.Home = (function(User) {
     }
 
     var removeClass = function() {
-        $('#modal').removeClass('modal-full--active')
+
+            $('body').removeClass('body--noscrolled')
+
+
+            $('#modal').removeClass('modal-full--active')
+        
+
+
     }
 
     function setupEvents() {
